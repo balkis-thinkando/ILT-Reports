@@ -12,7 +12,8 @@ Scan a directory for PowerPoint files (.pptx/.pptm) and collect useful metadata:
 - text statistics (word count, char count)
 - keywords (naive frequency-based)
 - short_summary (first few meaningful lines across slides)
-- course_name (best guess of the big title on the first slide)
+- course_name (big title on the first slide, **appended with platform** when detected)
+- platform (Cloud/DC when detected from file name)
 
 Outputs a CSV (and optional JSON).
 """
@@ -165,6 +166,16 @@ def extract_course_name(prs: Presentation):
     return best_line or None
 
 
+def detect_platform_from_filename(file_name: str):
+    """Return ('Cloud' or 'DC') if the file name contains -CLD- or -DC- (case-insensitive)."""
+    up = file_name.upper()
+    if "-CLD-" in up:
+        return "Cloud"
+    if "-DC-" in up:
+        return "DC"
+    return None
+
+
 def analyze_ppt(path: Path):
     try:
         prs = Presentation(str(path))
@@ -175,7 +186,8 @@ def analyze_ppt(path: Path):
     picture_count = 0
     screenshot_estimate = 0
     all_lines = []
-    course_name = extract_course_name(prs)
+    course_title = extract_course_name(prs) or Path(path).stem
+    platform = detect_platform_from_filename(path.name)
 
     for slide in prs.slides:
         all_lines.extend(extract_text_from_slide(slide))
@@ -202,8 +214,15 @@ def analyze_ppt(path: Path):
     keywords = keywords_from_text(full_text, topn=12)
     short_summary = short_summary_from_lines(all_lines, max_items=5, max_chars=140)
 
+    # Compose course_name with platform when available
+    if platform:
+        course_name = f"{course_title} - {platform}"
+    else:
+        course_name = course_title  # leave unchanged if platform not detected
+
     stat = {
-        "Course Name": course_name or "",
+        "Course Name": course_name,
+        "Platform": platform or "",
         "File Path": str(path.resolve()),
         "File Name": path.name,
         "Number of slides": slide_count,
@@ -217,20 +236,122 @@ def analyze_ppt(path: Path):
     return stat
 
 
-def find_ppts(root: Path, recursive=True, include_pptm=True):
-    patterns = ["*.pptx"]
+
+def find_ppts(
+    root: Path,
+    recursive: bool = True,
+    include_pptm: bool = True,
+    debug: bool = False,
+):
+    """
+    Discover PowerPoint files under `root` (Dropbox-safe).
+    - Uses os.walk to follow symlinks/junctions (common in Dropbox/team spaces)
+    - Case-insensitive match for .pptx/.pptm/.ppt
+    - Detects cloud placeholders and logs a count so you know what to hydrate
+    - Skips Office temp/lock files (~$*.pptx)
+    """
+    import os, sys, stat
+
+    exts = {".pptx", ".ppt"}  # include .ppt as well
     if include_pptm:
-        patterns.append("*.pptm")
-    files = []
+        exts.add(".pptm")
+
+    root = root.expanduser()
+
+    def looks_like_placeholder(p: Path) -> bool:
+        # Heuristics for macOS File Provider / Windows CFAPI placeholders
+        try:
+            if p.is_file():
+                try:
+                    st = p.stat()
+                    # Some placeholders report size 0
+                    if st.st_size == 0:
+                        return True
+                except Exception:
+                    pass
+                return False
+            # If not a dir but exists, could be a cloud placeholder
+            if p.exists() and not p.is_dir():
+                # Windows: check file attributes if exposed
+                try:
+                    st = p.stat(follow_symlinks=False)
+                    attrs = getattr(st, "st_file_attributes", 0)
+                    FILE_ATTRIBUTE_REPARSE = 0x0400
+                    FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS = 0x00400000
+                    if attrs & (FILE_ATTRIBUTE_REPARSE | FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS):
+                        return True
+                except Exception:
+                    pass
+                # Try opening; failure suggests placeholder
+                try:
+                    with open(p, "rb"):
+                        pass
+                    return False
+                except Exception:
+                    return True
+        except Exception:
+            return False
+        return False
+
+    real_files = []
+    placeholders = []
+
     if recursive:
-        for pat in patterns:
-            files.extend(root.rglob(pat))
+        walker = os.walk(root, topdown=True, followlinks=True)
     else:
-        for pat in patterns:
-            files.extend(root.glob(pat))
-    # de-duplicate & sort
-    uniq = sorted({f.resolve() for f in files if f.is_file()})
-    return list(uniq)
+        # emulate non-recursive walk
+        walker = [(str(root), [d.name for d in root.iterdir() if d.is_dir()], [f.name for f in root.iterdir() if f.is_file() or f.exists()])]
+
+    for dirpath, dirnames, filenames in walker:
+        for fname in filenames:
+            p = Path(dirpath) / fname
+            # skip lock files
+            if fname.startswith("~$"):
+                if debug:
+                    print(f"[skip temp] {p}", file=sys.stderr)
+                continue
+            # extension check
+            try:
+                suff = p.suffix.lower()
+            except Exception:
+                suff = ""
+            if suff not in exts:
+                continue
+
+            # placeholder vs real
+            try:
+                if p.is_file():
+                    real_files.append(p.resolve())
+                else:
+                    if looks_like_placeholder(p):
+                        placeholders.append(p)
+                    else:
+                        # try a best-effort stat/open to hydrate on macOS; ignore errors
+                        try:
+                            _ = p.stat()
+                            with open(p, "rb"):
+                                pass
+                            # If open works, treat as real
+                            real_files.append(p.resolve())
+                        except Exception:
+                            placeholders.append(p)
+            except OSError as e:
+                if debug:
+                    print(f"[skip error] {p} -> {e}", file=sys.stderr)
+                continue
+
+    uniq = sorted(set(real_files))
+    if debug:
+        import sys
+        print(f"[debug] found {len(uniq)} 'real' PPT files under {root}", file=sys.stderr)
+        if placeholders:
+            print(f"[debug] detected {len(placeholders)} placeholders (online-only). Hydrate these folders or files.", file=sys.stderr)
+            for pp in placeholders[:20]:
+                print(f"[debug]   placeholder: {pp}", file=sys.stderr)
+            if len(placeholders) > 20:
+                print(f"[debug]   ... (+{len(placeholders)-20} more)", file=sys.stderr)
+
+    return uniq
 
 
 def main():
