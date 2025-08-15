@@ -1,0 +1,81 @@
+[
+  {
+    "file_path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Advanced Asset Management in JSM - Cloud/AdvAssetMgmt-CLD-SG-2025-07-22.pptx",
+    "file_name": "AdvAssetMgmt-CLD-SG-2025-07-22.pptx",
+    "modified_time": "2025-07-18T11:33:59",
+    "size_bytes": 16560006,
+    "slide_count": 202,
+    "picture_count": 151,
+    "estimated_screenshots": 17,
+    "total_words": 6156,
+    "total_chars": 40292,
+    "keywords": "objects, assets, object, field, fields, import, type, work, data, attribute, referenced, configuration",
+    "short_summary": "Advanced Asset Management • In Jira Service Management • Cloud • Course Overview • 1"
+  },
+  {
+    "file_path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Asset Management Essentials in JSM - Cloud/AssetsEss-CLD-SG-2025-07-14.pptx",
+    "file_name": "AssetsEss-CLD-SG-2025-07-14.pptx",
+    "modified_time": "2025-07-22T22:00:01",
+    "size_bytes": 28553466,
+    "slide_count": 274,
+    "picture_count": 226,
+    "estimated_screenshots": 44,
+    "total_words": 7351,
+    "total_chars": 49197,
+    "keywords": "object, assets, type, objects, attribute, types, data, schema, attributes, import, configuration, search",
+    "short_summary": "Asset Management Essentials • Cloud • Course Overview • 1 • Navigate the Assets interface and object schemas"
+  },
+  {
+    "file_path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Jira Administration Part 1 - Cloud/Jira-Admin-Pt1-CLD-SG-2025-07-09.pptx",
+    "file_name": "Jira-Admin-Pt1-CLD-SG-2025-07-09.pptx",
+    "modified_time": "2025-07-21T16:15:38",
+    "size_bytes": 17718845,
+    "slide_count": 153,
+    "picture_count": 141,
+    "estimated_screenshots": 21,
+    "total_words": 3805,
+    "total_chars": 26949,
+    "keywords": "project, jira, projects, work, permissions, configuring, permission, company-managed, create, roles, schemes, items",
+    "short_summary": "Jira Administration Part 1 • Cloud • Course Overview • 1 • Describe the hierarchy of cloud administration"
+  },
+  {
+    "file_path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Jira Administration Part 2 - Cloud/Jira-Admin-Pt2-CLD-SG-2025-07-26.pptx",
+    "file_name": "Jira-Admin-Pt2-CLD-SG-2025-07-26.pptx",
+    "modified_time": "2025-07-23T16:36:46",
+    "size_bytes": 16443422,
+    "slide_count": 296,
+    "picture_count": 330,
+    "estimated_screenshots": 25,
+    "total_words": 9808,
+    "total_chars": 62997,
+    "keywords": "work, project, scheme, screen, schemes, workflow, field, jira, type, fields, types, create",
+    "short_summary": "Jira Administration Part 2 • Cloud • Course Overview • 1 • Map your organization's business requirements to Jira configurations"
+  },
+  {
+    "file_path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Managing Jira Projects - Cloud/ManJiraProj-CLD-SG-2025-07-21.pptx",
+    "file_name": "ManJiraProj-CLD-SG-2025-07-21.pptx",
+    "modified_time": "2025-07-21T12:13:36",
+    "size_bytes": 32943373,
+    "slide_count": 322,
+    "picture_count": 276,
+    "estimated_screenshots": 63,
+    "total_words": 9564,
+    "total_chars": 62314,
+    "keywords": "work, project, jira, projects, board, items, create, administrator, item, types, team, boards",
+    "short_summary": "Managing Jira Projects • Cloud • Course Overview • 1 • Configure boards and Work types"
+  },
+  {
+    "file_path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Transition to Jira Cloud/Transition to Jira Cloud_final.pptx",
+    "file_name": "Transition to Jira Cloud_final.pptx",
+    "modified_time": "2025-07-31T18:40:40",
+    "size_bytes": 16101140,
+    "slide_count": 47,
+    "picture_count": 40,
+    "estimated_screenshots": 17,
+    "total_words": 604,
+    "total_chars": 3869,
+    "keywords": "cloud, jira, atlassian, projects, work, view, templates, intelligence, automation, chat, demo, create",
+    "short_summary": "Transition to Jira Cloud • As you join, please share in the chat: • Your name • Your role • Rate your confidence using Jira Cloud from 1-10"
+  }
+]
+
