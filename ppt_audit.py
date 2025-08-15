@@ -223,7 +223,6 @@ def analyze_ppt(path: Path):
     stat = {
         "Course Name": course_name,
         "Platform": platform or "",
-        "File Path": str(path.resolve()),
         "File Name": path.name,
         "Number of slides": slide_count,
         "Number of pictures": picture_count,
