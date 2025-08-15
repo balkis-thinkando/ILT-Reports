@@ -1,5 +1,6 @@
 [
   {
+    "Course Name": "Advanced Asset Management",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Advanced Asset Management in JSM - Cloud/AdvAssetMgmt-CLD-SG-2025-07-22.pptx",
     "File Name": "AdvAssetMgmt-CLD-SG-2025-07-22.pptx",
     "Number of slides": 202,
@@ -10,6 +11,7 @@
     "Short Summary": "Advanced Asset Management • In Jira Service Management • Cloud • Course Overview • 1"
   },
   {
+    "Course Name": "Asset Management Essentials",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Asset Management Essentials in JSM - Cloud/AssetsEss-CLD-SG-2025-07-14.pptx",
     "File Name": "AssetsEss-CLD-SG-2025-07-14.pptx",
     "Number of slides": 274,
@@ -20,6 +22,7 @@
     "Short Summary": "Asset Management Essentials • Cloud • Course Overview • 1 • Navigate the Assets interface and object schemas"
   },
   {
+    "Course Name": "Jira Administration Part 1",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Jira Administration Part 1 - Cloud/Jira-Admin-Pt1-CLD-SG-2025-07-09.pptx",
     "File Name": "Jira-Admin-Pt1-CLD-SG-2025-07-09.pptx",
     "Number of slides": 153,
@@ -30,6 +33,7 @@
     "Short Summary": "Jira Administration Part 1 • Cloud • Course Overview • 1 • Describe the hierarchy of cloud administration"
   },
   {
+    "Course Name": "Jira Administration Part 2",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Jira Administration Part 2 - Cloud/Jira-Admin-Pt2-CLD-SG-2025-07-26.pptx",
     "File Name": "Jira-Admin-Pt2-CLD-SG-2025-07-26.pptx",
     "Number of slides": 296,
@@ -40,6 +44,7 @@
     "Short Summary": "Jira Administration Part 2 • Cloud • Course Overview • 1 • Map your organization's business requirements to Jira configurations"
   },
   {
+    "Course Name": "Managing Jira Projects",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Managing Jira Projects - Cloud/ManJiraProj-CLD-SG-2025-07-21.pptx",
     "File Name": "ManJiraProj-CLD-SG-2025-07-21.pptx",
     "Number of slides": 322,
@@ -50,6 +55,7 @@
     "Short Summary": "Managing Jira Projects • Cloud • Course Overview • 1 • Configure boards and Work types"
   },
   {
+    "Course Name": "Plans in Jira",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Plans in Jira - Cloud/Plans-in-Jira-CLD-SG-2025-06-05.pptx",
     "File Name": "Plans-in-Jira-CLD-SG-2025-06-05.pptx",
     "Number of slides": 168,
@@ -60,6 +66,7 @@
     "Short Summary": "Plans in Jira • Cloud • Course Overview • 1 • Note"
   },
   {
+    "Course Name": "Rate your confidence using Jira Cloud from 1-10",
     "File Path": "/Users/bkhouni/Atlassian Dropbox/Atlassian University/AU Content/_PROD/ILT/8.x (Prod)/Transition to Jira Cloud/Transition to Jira Cloud_final.pptx",
     "File Name": "Transition to Jira Cloud_final.pptx",
     "Number of slides": 47,

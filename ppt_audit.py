@@ -12,6 +12,7 @@ Scan a directory for PowerPoint files (.pptx/.pptm) and collect useful metadata:
 - text statistics (word count, char count)
 - keywords (naive frequency-based)
 - short_summary (first few meaningful lines across slides)
+- course_name (best guess of the big title on the first slide)
 
 Outputs a CSV (and optional JSON).
 """
@@ -27,6 +28,7 @@ from pathlib import Path
 
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
+from pptx.enum.shapes import PP_PLACEHOLDER
 from PIL import Image
 import pandas as pd
 
@@ -38,6 +40,12 @@ STOPWORDS = {
     "what","when","where","which","while","within","without","between","into","onto","off","too","also","more","less",
     "how","why","who","whom","whose","a","an","in","on","at","of","by","to","as","or","is","be","we","it"
 }
+
+def condense(s: str, max_chars: int = 200) -> str:
+    s = " ".join((s or "").split())
+    if len(s) > max_chars:
+        s = s[: max_chars - 1] + "…"
+    return s
 
 def is_probable_screenshot(width, height):
     """
@@ -109,6 +117,54 @@ def short_summary_from_lines(lines, max_items=5, max_chars=140):
     return " • ".join(summary)
 
 
+def extract_course_name(prs: Presentation):
+    """Return the big title from the first slide, if we can guess it."""
+    try:
+        slide = prs.slides[0]
+    except IndexError:
+        return None
+
+    # 1) Built-in title placeholder (most reliable)
+    try:
+        title_shape = slide.shapes.title
+    except Exception:
+        title_shape = None
+    if title_shape is not None:
+        t = condense(getattr(title_shape, "text", "") or "")
+        if t:
+            return t
+
+    # 2) Any placeholder explicitly marked as TITLE/CENTER_TITLE
+    for shape in slide.shapes:
+        try:
+            if shape.shape_type == MSO_SHAPE_TYPE.PLACEHOLDER:
+                ph = shape.placeholder_format
+                if getattr(ph, "type", None) in (PP_PLACEHOLDER.TITLE, PP_PLACEHOLDER.CENTER_TITLE):
+                    t = condense(getattr(shape, "text", "") or "")
+                    if t:
+                        return t
+        except Exception:
+            pass
+
+    # 3) Heuristic: longest text line in the top half of the slide
+    H = getattr(prs, "slide_height", None) or 0
+    best_line = ""
+    best_score = -1
+    for shape in slide.shapes:
+        if hasattr(shape, "has_text_frame") and shape.has_text_frame:
+            y_center = getattr(shape, "top", 0) + getattr(shape, "height", 0) / 2
+            top_weight = 20 if (H and y_center < H / 2) else 0
+            text = getattr(shape, "text", "") or ""
+            for raw in (ln.strip() for ln in text.splitlines() if ln.strip()):
+                line = condense(raw, 140)
+                score = len(line) + top_weight
+                if score > best_score:
+                    best_score = score
+                    best_line = line
+
+    return best_line or None
+
+
 def analyze_ppt(path: Path):
     try:
         prs = Presentation(str(path))
@@ -119,6 +175,7 @@ def analyze_ppt(path: Path):
     picture_count = 0
     screenshot_estimate = 0
     all_lines = []
+    course_name = extract_course_name(prs)
 
     for slide in prs.slides:
         all_lines.extend(extract_text_from_slide(slide))
@@ -146,6 +203,7 @@ def analyze_ppt(path: Path):
     short_summary = short_summary_from_lines(all_lines, max_items=5, max_chars=140)
 
     stat = {
+        "Course Name": course_name or "",
         "File Path": str(path.resolve()),
         "File Name": path.name,
         "Number of slides": slide_count,
@@ -153,7 +211,8 @@ def analyze_ppt(path: Path):
         "Estimated screenshots": screenshot_estimate,
         "Total words": total_words,
         "keywords": ", ".join(keywords),
-        "Short Summary": short_summary,
+        "Short Summary": short_summary
+        
     }
     return stat
 
