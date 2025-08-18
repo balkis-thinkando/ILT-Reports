@@ -7,7 +7,6 @@
     "Number of pictures": 151,
     "Estimated screenshots": 17,
     "Total words": 6156,
-    "keywords": "objects, assets, object, field, fields, import, type, work, data, attribute, referenced, configuration",
     "Short Summary": "Advanced Asset Management • In Jira Service Management • Cloud • Course Overview • 1"
   },
   {
@@ -18,7 +17,6 @@
     "Number of pictures": 161,
     "Estimated screenshots": 15,
     "Total words": 5634,
-    "keywords": "object, assets, custom, field, objects, fields, step, attribute, type, referenced, configuration, filter",
     "Short Summary": "Advanced Asset Management • In Jira Service Management • Data Center • Course Overview • 1"
   },
   {
@@ -29,7 +27,6 @@
     "Number of pictures": 226,
     "Estimated screenshots": 44,
     "Total words": 7351,
-    "keywords": "object, assets, type, objects, attribute, types, data, schema, attributes, import, configuration, search",
     "Short Summary": "Asset Management Essentials • Cloud • Course Overview • 1 • Navigate the Assets interface and object schemas"
   },
   {
@@ -40,7 +37,6 @@
     "Number of pictures": 233,
     "Estimated screenshots": 25,
     "Total words": 7990,
-    "keywords": "object, assets, type, objects, data, types, attribute, attributes, import, schema, configuration, search",
     "Short Summary": "Asset Management Essentials • Data Center • Course Overview • 1 • Navigate the Assets interface and object schemas"
   },
   {
@@ -51,7 +47,6 @@
     "Number of pictures": 287,
     "Estimated screenshots": 23,
     "Total words": 6102,
-    "keywords": "access, organization, atlassian, user, users, admin, site, apps, accounts, managed, features, cloud",
     "Short Summary": "Atlassian • Organization Administration • Course Overview • 1 • Define Atlassian cloud organizations, sites, and apps"
   },
   {
@@ -62,7 +57,6 @@
     "Number of pictures": 151,
     "Estimated screenshots": 39,
     "Total words": 4102,
-    "keywords": "incident, service, team, major, management, incidents, communicate, atlassian, project, services, investigate, detect",
     "Short Summary": "Atlassian Incident Management Essentials • Cloud • Course Overview • 1 • List the stages for a major incident"
   },
   {
@@ -73,7 +67,6 @@
     "Number of pictures": 148,
     "Estimated screenshots": 24,
     "Total words": 4786,
-    "keywords": "service, request, assets, knowledge, object, create, management, automation, requests, base, articles, field",
     "Short Summary": "Atlassian Service Request Management Essentials • Cloud • Course Overview • 1 • List the advantages of service request management"
   },
   {
@@ -84,7 +77,6 @@
     "Number of pictures": 162,
     "Estimated screenshots": 11,
     "Total words": 2969,
-    "keywords": "space, confluence, users, permissions, analytics, access, user, administrator, site, atlassian, permission, create",
     "Short Summary": "Confluence Administration • Cloud • Course Overview • 1 • Managing users in Confluence"
   },
   {
@@ -95,7 +87,6 @@
     "Number of pictures": 215,
     "Estimated screenshots": 14,
     "Total words": 5776,
-    "keywords": "space, page, confluence, users, create, content, pages, permission, permissions, spaces, administrator, view",
     "Short Summary": "Confluence Administration • Data Center • Course Overview • 1 • Configure System settings"
   },
   {
@@ -106,7 +97,6 @@
     "Number of pictures": 278,
     "Estimated screenshots": 11,
     "Total words": 4397,
-    "keywords": "page, space, confluence, pages, content, create, blueprint, using, jira, attachments, delete, atlassian",
     "Short Summary": "Confluence Essentials • Data Center • Course Overview • 1 • Access to a Confluence account"
   },
   {
@@ -117,7 +107,6 @@
     "Number of pictures": 156,
     "Estimated screenshots": 6,
     "Total words": 5837,
-    "keywords": "workflow, work, transition, post, jira, workflows, project, status, only, item, functions, conditions",
     "Short Summary": "Getting More from Jira Workflows • Cloud • Course Overview • 1 • Use advanced workflow features"
   },
   {
@@ -128,7 +117,6 @@
     "Number of pictures": 156,
     "Estimated screenshots": 2,
     "Total words": 5676,
-    "keywords": "workflow, transition, issue, post, jira, project, workflows, status, only, functions, conditions, validators",
     "Short Summary": "Getting More from Jira Workflows • Data Center • Course Overview • 1 • Use advanced workflow features"
   },
   {
@@ -139,7 +127,6 @@
     "Number of pictures": 197,
     "Estimated screenshots": 57,
     "Total words": 8564,
-    "keywords": "work, items, team, sprint, scrum, agile, item, jira, production, search, backlog, project",
     "Short Summary": "Jira Essentials with Agile Mindset • Course Overview • 1 • Use lean and agile principles • Differentiate kanban and scrum"
   },
   {
@@ -150,7 +137,6 @@
     "Number of pictures": 228,
     "Estimated screenshots": 46,
     "Total words": 9481,
-    "keywords": "work, issues, team, sprint, scrum, issue, search, agile, jira, board, backlog, project",
     "Short Summary": "Jira Essentials with Agile Mindset • Data Center • Course Overview • 1 • Use lean and agile principles"
   },
   {
@@ -161,7 +147,6 @@
     "Number of pictures": 162,
     "Estimated screenshots": 14,
     "Total words": 2971,
-    "keywords": "dashboard, chart, jira, reports, work, report, sprint, dashboards, burndown, team, gadgets, project",
     "Short Summary": "Realizing the Power of Jira Reporting and Dashboards • Cloud • Course Overview • 1 • Become a Jira Reports and Dashboard Guru!"
   },
   {
@@ -172,7 +157,6 @@
     "Number of pictures": 172,
     "Estimated screenshots": 9,
     "Total words": 3113,
-    "keywords": "jira, dashboard, chart, reports, report, sprint, dashboards, burndown, project, gadgets, team, data",
     "Short Summary": "Realizing the Power of Jira Reporting and Dashboards • Data Center • Course Overview • 1 • Become a Jira Reports and Dashboard Guru!"
   },
   {
@@ -183,7 +167,6 @@
     "Number of pictures": 141,
     "Estimated screenshots": 21,
     "Total words": 3805,
-    "keywords": "project, jira, projects, work, permissions, configuring, permission, company-managed, create, roles, schemes, items",
     "Short Summary": "Jira Administration Part 1 • Cloud • Course Overview • 1 • Describe the hierarchy of cloud administration"
   },
   {
@@ -194,7 +177,6 @@
     "Number of pictures": 198,
     "Estimated screenshots": 15,
     "Total words": 4006,
-    "keywords": "project, jira, users, create, groups, permissions, projects, user, access, default, application, permission",
     "Short Summary": "Jira Administration Part 1 • Data Center • Course Overview • 1 • Configure system settings"
   },
   {
@@ -205,7 +187,6 @@
     "Number of pictures": 330,
     "Estimated screenshots": 25,
     "Total words": 9808,
-    "keywords": "work, project, scheme, screen, schemes, workflow, field, jira, type, fields, types, create",
     "Short Summary": "Jira Administration Part 2 • Cloud • Course Overview • 1 • Map your organization's business requirements to Jira configurations"
   },
   {
@@ -216,7 +197,6 @@
     "Number of pictures": 376,
     "Estimated screenshots": 16,
     "Total words": 8876,
-    "keywords": "issue, project, jira, scheme, field, schemes, create, screen, projects, workflow, fields, type",
     "Short Summary": "Jira Administration Part 2 • Data Center • Course Overview • 1 • Map your organization’s business requirements to Jira configurations"
   },
   {
@@ -227,7 +207,6 @@
     "Number of pictures": 133,
     "Estimated screenshots": 36,
     "Total words": 3479,
-    "keywords": "work, rule, automation, jira, rules, item, items, project, create, action, service, management",
     "Short Summary": "Jira Automation • Course Overview • 1 • Describe reasons to automate Jira • Create basic automation rules"
   },
   {
@@ -238,7 +217,6 @@
     "Number of pictures": 378,
     "Estimated screenshots": 17,
     "Total words": 4959,
-    "keywords": "issue, issues, board, jira, work, scrum, answer, project, level, boards, backlog, search",
     "Short Summary": "Prepare for the Jira Software Essentials certification exam • Please share in the chat: • Your name • Your role • Rate your knowledge of Jira from 1-10"
   },
   {
@@ -249,7 +227,6 @@
     "Number of pictures": 89,
     "Estimated screenshots": 17,
     "Total words": 3086,
-    "keywords": "jira, confluence, work, items, page, create, macro, pages, item, link, project, blueprint",
     "Short Summary": "Jira and Confluence • Together • Course Overview • 1 • Identify the value of using Jira and Confluence together"
   },
   {
@@ -260,7 +237,6 @@
     "Number of pictures": 75,
     "Estimated screenshots": 19,
     "Total words": 2820,
-    "keywords": "jira, confluence, page, issues, create, issue, macro, pages, link, project, requirements, blueprint",
     "Short Summary": "Jira and Confluence • Together • Data Center • Course Overview • 1"
   },
   {
@@ -271,7 +247,6 @@
     "Number of pictures": 146,
     "Estimated screenshots": 10,
     "Total words": 2768,
-    "keywords": "space, page, content, pages, confluence, restrictions, permissions, spaces, analytics, create, atlassian, view",
     "Short Summary": "Managing Confluence Spaces • Cloud • Course Overview • 1 • Determine how to best set up your Confluence space."
   },
   {
@@ -282,7 +257,6 @@
     "Number of pictures": 276,
     "Estimated screenshots": 63,
     "Total words": 9564,
-    "keywords": "work, project, jira, projects, board, items, create, administrator, item, types, team, boards",
     "Short Summary": "Managing Jira Projects • Cloud • Course Overview • 1 • Configure boards and Work types"
   },
   {
@@ -293,7 +267,6 @@
     "Number of pictures": 242,
     "Estimated screenshots": 45,
     "Total words": 8149,
-    "keywords": "project, jira, board, projects, issues, issue, work, administrator, boards, team, permissions, administrators",
     "Short Summary": "Managing Jira Projects • Data Center • Course Overview • 1 • Configure boards and issue types"
   },
   {
@@ -304,7 +277,6 @@
     "Number of pictures": 200,
     "Estimated screenshots": 21,
     "Total words": 4367,
-    "keywords": "service, project, work, jira, customer, request, requests, customers, portal, create, management, item",
     "Short Summary": "Managing Jira Service Projects • Cloud • Course Overview • 1 • Create a service project"
   },
   {
@@ -315,7 +287,6 @@
     "Number of pictures": 210,
     "Estimated screenshots": 25,
     "Total words": 4307,
-    "keywords": "service, project, jira, issue, customer, request, requests, customers, issues, knowledge, base, portal",
     "Short Summary": "Managing Jira Service Projects • Data Center • Course Overview • 1 • Create a service project"
   },
   {
@@ -326,7 +297,6 @@
     "Number of pictures": 149,
     "Estimated screenshots": 25,
     "Total words": 3791,
-    "keywords": "plan, work, plans, jira, planning, dependencies, teams, view, items, team, releases, item",
     "Short Summary": "Plans in Jira • Cloud • Course Overview • 1 • Note"
   },
   {
@@ -337,7 +307,6 @@
     "Number of pictures": 85,
     "Estimated screenshots": 11,
     "Total words": 2552,
-    "keywords": "jira, plans, software, working, plan, release, teams, team, releases, planning, issue, dependencies",
     "Short Summary": "Plans in Jira Software • Data Center • Note • Plans in Jira Software was previously known as Advanced Roadmaps. • Plans in Jira Software is a Jira Premium feature bundled with Jira Software Data Center (DC)."
   },
   {
@@ -348,7 +317,6 @@
     "Number of pictures": 40,
     "Estimated screenshots": 17,
     "Total words": 604,
-    "keywords": "cloud, jira, atlassian, projects, work, view, templates, intelligence, automation, chat, demo, create",
     "Short Summary": "Transition to Jira Cloud • As you join, please share in the chat: • Your name • Your role • Rate your confidence using Jira Cloud from 1-10"
   }
 ]

@@ -228,7 +228,6 @@ def analyze_ppt(path: Path):
         "Number of pictures": picture_count,
         "Estimated screenshots": screenshot_estimate,
         "Total words": total_words,
-        "keywords": ", ".join(keywords),
         "Short Summary": short_summary
         
     }
